@@ -1,0 +1,43 @@
+.left-nav-container {
+  position: relative;
+
+  .icons {
+    position: fixed;
+    z-index: 10;
+
+    @media screen and (max-width: 590px) {
+      margin: 2px 0 0 -9px;
+    }
+
+    .icons-bis {
+      position: absolute;
+      left: 10px;
+
+      a {
+        transition: 0.1s;
+        display: inline-block;
+
+        &:before {
+          transition: .15s ease;
+          transform: scale(0);
+          transform-origin: center;
+          z-index: -10;
+          content: "";
+          height: 45px;
+          width: 45px;
+          position: absolute;
+          background: $color-2;
+          border-radius: 50px;
+        }
+
+        &:hover {
+          transform: scale(1.02);
+        }
+
+        &:hover::before {
+          transform: scale(1);
+        }
+      }
+    }
+  }
+}
